@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="-php基础知识," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="php字符串的定义方式及各自区别定义方式：单引号，双引号，heredoc和nowdoc 区别单引号不能解析变量 单引号不能解析转义字符，只能解析单引号和反斜线本身 变量和变量，变量和字符串，字符串和字符串之间可以用.连接  双引号可以解析变量，变量可以使用特殊字符和{}包含 双引号可以解析所有转义字符 可以使用.连接  单引号效率更高  $sql = &amp;quot;SELECT * FROM use">
+<meta name="keywords" content="-php基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常量及数据类型">
+<meta property="og:url" content="http://yoursite.com/2018/02/13/php基础/常量及数据类型/index.html">
+<meta property="og:site_name" content="火垂るの墓">
+<meta property="og:description" content="php字符串的定义方式及各自区别定义方式：单引号，双引号，heredoc和nowdoc 区别单引号不能解析变量 单引号不能解析转义字符，只能解析单引号和反斜线本身 变量和变量，变量和字符串，字符串和字符串之间可以用.连接  双引号可以解析变量，变量可以使用特殊字符和{}包含 双引号可以解析所有转义字符 可以使用.连接  单引号效率更高  $sql = &amp;quot;SELECT * FROM use">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-13T03:36:08.740Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常量及数据类型">
+<meta name="twitter:description" content="php字符串的定义方式及各自区别定义方式：单引号，双引号，heredoc和nowdoc 区别单引号不能解析变量 单引号不能解析转义字符，只能解析单引号和反斜线本身 变量和变量，变量和字符串，字符串和字符串之间可以用.连接  双引号可以解析变量，变量可以使用特殊字符和{}包含 双引号可以解析所有转义字符 可以使用.连接  单引号效率更高  $sql = &amp;quot;SELECT * FROM use">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/02/13/php基础/常量及数据类型/"/>
+
+
+
+
+
+  <title>常量及数据类型 | 火垂るの墓</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">火垂るの墓</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">分享不到温暖仍努力去发亮<br />直到流金似的岁月留在星空</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/13/php基础/常量及数据类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="火垂るの墓">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/zuozhu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="火垂るの墓">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">常量及数据类型</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-13T10:01:23+08:00">
+                2018-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="php字符串的定义方式及各自区别"><a href="#php字符串的定义方式及各自区别" class="headerlink" title="php字符串的定义方式及各自区别"></a>php字符串的定义方式及各自区别</h2><h3 id="定义方式："><a href="#定义方式：" class="headerlink" title="定义方式："></a>定义方式：</h3><pre><code>单引号，双引号，heredoc和nowdoc
+</code></pre><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><pre><code>单引号不能解析变量
+单引号不能解析转义字符，只能解析单引号和反斜线本身
+变量和变量，变量和字符串，字符串和字符串之间可以用.连接
+
+双引号可以解析变量，变量可以使用特殊字符和{}包含
+双引号可以解析所有转义字符
+可以使用.连接
+
+单引号效率更高
+
+$sql = &quot;SELECT * FROM user WHERE name = &apos;$name&apos; &quot;;
+$sql = &apos;SELECT * FROM user WHERE name = \&apos;&apos;$name&apos;\&apos;&apos;;
+\&apos; ==&gt;单引号
+
+heredoc类似于双引号
+$str=&lt;&lt;&lt;EoT
+&apos;
+&apos;string
+&apos;
+EoT;
+nowdoc类似于单引号
+$str=&lt;&lt;&lt;&apos;EoT&apos;
+EoT;  
+两者都用来处理大文本
+</code></pre><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>三大数据类型：标量，符合，特殊<br>标量：<br>浮点类型<br>浮点类型不能用于比较类型<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$a= <span class="number">0.1</span>;</span><br><span class="line">$b=<span class="number">0.7</span>;</span><br><span class="line"><span class="keyword">if</span>(($a+$b)==<span class="number">0.8</span>)</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"true"</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">"false"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>布尔类型<br>      FALSE的七种情况<br>      0, 0.0 ,’ ‘,’0’，false,array(),NULL</p>
+<p>数组类型：<br>超全局数组：</p>
+<pre><code>$GLOBALS,$_GET,$_POST,$_REQUEST,
+$_SESSION,$_COOKIE,$_SERVER,$_FILES,$_ENV
+</code></pre><p>$GLOBALS包含所有的。<br>$_REQUEST包含$_GET,$_post和$_COOKIE尽量不用<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$_SERVER[<span class="string">'SERVER_ADDR'</span>]; <span class="comment">//服务器端的ip地址*****</span></span><br><span class="line">$_SERVER[<span class="string">'SERVER_NAME'</span>]; <span class="comment">//服务器名称</span></span><br><span class="line">$_SERVER[<span class="string">'REQUEST_TIME'</span>]; <span class="comment">//服务请求时间</span></span><br><span class="line">$_SERVER[<span class="string">'QUERY_STRING'</span>]; <span class="comment">//?后面的,可以为空</span></span><br><span class="line">$_SERVER[<span class="string">'HTTP_REFERER'</span>]; <span class="comment">//上级请求页面</span></span><br><span class="line">$_SERVER[<span class="string">'HTTP_USER_AGENT'</span>];<span class="comment">//头信息中的user信息，包括用户使用的浏览器，操作系统等信息</span></span><br><span class="line">$_SERVER[<span class="string">'REMOTE_ADDR'</span>];<span class="comment">//客户端ip地址 *****</span></span><br><span class="line">$_SERVER[<span class="string">'REQUEST_URI'</span>];<span class="comment">//获取 http://localhost 后面的值，包括/</span></span><br><span class="line">$_SERVER[<span class="string">'PATH_INFO'</span>];<span class="comment">//处理路由和功能</span></span><br><span class="line"><span class="comment">//http://www.test.com/index.php/foo/bar.html?c=index&amp;m=search</span></span><br><span class="line"><span class="comment">//我们可以得到 $_SERVER['PATH_INFO'] ＝ ‘/foo/bar.html’,而此时 $_SERVER['QUERY_STRING'] = 'c=index&amp;m=search';</span></span><br></pre></td></tr></table></figure></p>
+<p>NULL<br>直接赋值为NULL,未定义的变量，unset销毁的变量都为NULL</p>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>定义<br>const,define<br>const效率更快，是语言结构，define是函数<br>const可以定义类的常量，define不能<br>常量一经定义，不能被修改，不能被删除</p>
+<h3 id="预定义常量"><a href="#预定义常量" class="headerlink" title="预定义常量"></a>预定义常量</h3><pre><code>当前文件行数__LINE__
+所在目录__DIR__
+__FILE__:文件的完整路径和文件名 \xamp\htdocs\php\2.3.php
+当前被调用的函数名__FUNCTION__:
+__TRAIT__: Trait 的名字（PHP 5.4.0 新加）。自 PHP 5.4 起此常量返回 trait 被定义时的名字（区分大小写）。Trait 名包括其被声明的作用区域（例如 Foo\Bar）
+类名__CLASS__:
+类的方法名__METHOD__:
+__NAMESPACE__:当前命名空间的名称（区分大小写
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php基础知识/" rel="tag"># -php基础知识</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/02/小程序/" rel="next" title="小程序">
+                <i class="fa fa-chevron-left"></i> 小程序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/13/php基础/运算符/" rel="prev" title="运算符">
+                运算符 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/zuozhu.jpg"
+                alt="火垂るの墓" />
+            
+              <p class="site-author-name" itemprop="name">火垂るの墓</p>
+              <p class="site-description motion-element" itemprop="description"><em>一切很好 不缺烦恼</em></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hottestcold/hottestcold.github.io" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="coolestcold@yahoo.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.uisdc.com/" title="优设" target="_blank">优设</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#php字符串的定义方式及各自区别"><span class="nav-number">1.</span> <span class="nav-text">php字符串的定义方式及各自区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义方式："><span class="nav-number">1.1.</span> <span class="nav-text">定义方式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区别"><span class="nav-number">1.2.</span> <span class="nav-text">区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常量"><span class="nav-number">2.1.</span> <span class="nav-text">常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预定义常量"><span class="nav-number">2.2.</span> <span class="nav-text">预定义常量</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">火垂るの墓</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
