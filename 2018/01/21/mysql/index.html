@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="mysql基础 mysql的关联UPDATE语句 关联更新update A,B set A.c1 = B.c1,A.c2 = B.c2 where A.id = B.idupdate A inner join B on A.id=B.id setA.c1=B.c1,A.c2=B.c2 where….. eg:A(id,sex,par,c1,c2)B(id,age,c1,c2)update A,B">
+<meta name="description" content="mysql的关联UPDATE语句关联更新 update A,B set A.c1 = B.c1,A.c2 = B.c2 where A.id = B.id update A inner join B on A.id=B.id set A.c1=B.c1,A.c2=B.c2 where..... eg:12345678A(id,sex,par,c1,c2)B(id,age,c1,c2)update">
 <meta name="keywords" content="-mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql基础">
 <meta property="og:url" content="http://yoursite.com/2018/01/21/mysql/index.html">
-<meta property="og:site_name" content="火垂るの墓">
-<meta property="og:description" content="mysql基础 mysql的关联UPDATE语句 关联更新update A,B set A.c1 = B.c1,A.c2 = B.c2 where A.id = B.idupdate A inner join B on A.id=B.id setA.c1=B.c1,A.c2=B.c2 where….. eg:A(id,sex,par,c1,c2)B(id,age,c1,c2)update A,B">
+<meta property="og:site_name" content="小武哥哥">
+<meta property="og:description" content="mysql的关联UPDATE语句关联更新 update A,B set A.c1 = B.c1,A.c2 = B.c2 where A.id = B.id update A inner join B on A.id=B.id set A.c1=B.c1,A.c2=B.c2 where..... eg:12345678A(id,sex,par,c1,c2)B(id,age,c1,c2)update">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-14T11:18:08.000Z">
+<meta property="og:updated_time" content="2018-02-19T07:13:06.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql基础">
-<meta name="twitter:description" content="mysql基础 mysql的关联UPDATE语句 关联更新update A,B set A.c1 = B.c1,A.c2 = B.c2 where A.id = B.idupdate A inner join B on A.id=B.id setA.c1=B.c1,A.c2=B.c2 where….. eg:A(id,sex,par,c1,c2)B(id,age,c1,c2)update A,B">
+<meta name="twitter:description" content="mysql的关联UPDATE语句关联更新 update A,B set A.c1 = B.c1,A.c2 = B.c2 where A.id = B.id update A inner join B on A.id=B.id set A.c1=B.c1,A.c2=B.c2 where..... eg:12345678A(id,sex,par,c1,c2)B(id,age,c1,c2)update">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>mysql基础 | 火垂るの墓</title>
+  <title>mysql基础 | 小武哥哥</title>
   
 
 
@@ -156,12 +156,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">火垂るの墓</span>
+        <span class="site-title">小武哥哥</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">化作一颗流星不管飞向那里，我身後有闪烁的回忆</p>
+        <p class="site-subtitle">什么也没错过<br />其实一无所获</p>
       
   </div>
 
@@ -256,13 +256,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/21/mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="火垂るの墓">
+      <meta itemprop="name" content="小武哥哥">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/zuozhu.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="火垂るの墓">
+      <meta itemprop="name" content="小武哥哥">
     </span>
 
     
@@ -320,18 +320,37 @@
       
 
       
-        <p>mysql基础</p>
-<p>mysql的关联UPDATE语句</p>
-<p>关联更新<br>update A,B set A.c1 = B.c1,A.c2 = B.c2 where A.id = B.id<br>update A inner join B on A.id=B.id set<br>A.c1=B.c1,A.c2=B.c2 where…..</p>
-<p>eg:<br>A(id,sex,par,c1,c2)<br>B(id,age,c1,c2)<br>update A,B set A.c1=B.c1, A.c2=b.c2<br>where A.id=B.id and B.age&gt;50;</p>
-<p>update A inner join B on A.id=B.id<br>set A.c1=B.c1,A.c2=B.c2<br>where B.age&gt;50</p>
-<p>mysql关联查询语句<br>六种关联查询<br>交叉链接(CROSS JOIN),内链接(INNER JOIN),外连接(LEFT JOIN/RIGHT JOIN),联合查询(UNION与UNION ALL),全连接(FULL JOIN)</p>
-<p>内连接<br>select <em> from A&lt;B where A.id=B.id 或者<br>select </em> from A inner join B on A.id=B.id<br>多表中同时符合某种条件的数据记录的集合<br>内连接分为三类：<br>等值连接：ON A.id=B.id<br>不等值连接：ON A.id&gt;B.id<br>自连接：select * from A T1 innner join A T2 on T1.id=T2.pid</p>
-<p>外连接：<br>左外连接：LEFT OUTER JOIN ,以左表为主，先查询出左表，按照ON 之后的关联条件匹配右表，没有匹配到的用NULL填充，可以简写成LEFT JOIN<br>右外连接：RIGHT OUTER JOIN ,以右表为主，先查询出左表，按照ON 之后的关联条件匹配左表，没有匹配到的用NULL填充，可以简写成RIGHT JOIN</p>
-<p>联合查询<br>select <em> from A union select </em> from B union…<br>就是把多个结果集集中在一起，union前的结果为基准，需要注意的是联合查询的列数要相等，相同的记录行会合并，如果使用union all ,不会合并重复的记录行</p>
-<p>全连接<br>mysql不支持全连接<br>可以使用LEFT JOIN和UNION和RIGHT JOIN 联合使用<br>select <em> from A left join B on A.id=B.id union<br>select </em> from A right join B on A.id=B.id</p>
-<p>嵌套查询<br>用一条SQL语句的结果作为另外一条SQL语句的条件<br>select * from A where id IN (SELECT id FROM B)</p>
-
+        <h2 id="mysql的关联UPDATE语句"><a href="#mysql的关联UPDATE语句" class="headerlink" title="mysql的关联UPDATE语句"></a>mysql的关联UPDATE语句</h2><p>关联更新</p>
+<pre><code>update A,B set A.c1 = B.c1,A.c2 = B.c2 where A.id = B.id
+update A inner join B on A.id=B.id set
+A.c1=B.c1,A.c2=B.c2 where.....
+</code></pre><p>eg:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">A(id,sex,par,c1,c2)</span><br><span class="line">B(id,age,c1,c2)</span><br><span class="line">update A,B set A.c1=B.c1, A.c2=b.c2</span><br><span class="line">where A.id=B.id and B.age&gt;50;</span><br><span class="line"></span><br><span class="line">update A inner join B on A.id=B.id</span><br><span class="line">set A.c1=B.c1,A.c2=B.c2</span><br><span class="line">where B.age&gt;50</span><br></pre></td></tr></table></figure></p>
+<h2 id="mysql关联查询语句"><a href="#mysql关联查询语句" class="headerlink" title="mysql关联查询语句"></a>mysql关联查询语句</h2><p>六种关联查询:</p>
+<pre><code>交叉链接(CROSS JOIN),内链接(INNER JOIN),外连接(LEFT JOIN/RIGHT JOIN),联合查询(UNION与UNION ALL),全连接(FULL JOIN)
+</code></pre><p>内连接</p>
+<pre><code>select * from A&lt;B where A.id=B.id 或者
+select * from A inner join B on A.id=B.id
+多表中同时符合某种条件的数据记录的集合
+内连接分为三类：
+等值连接：ON A.id=B.id
+不等值连接：ON A.id&gt;B.id
+</code></pre><p>自连接：</p>
+<pre><code>select * from A T1 innner join A T2 on T1.id=T2.pid
+</code></pre><p>外连接：</p>
+<pre><code>左外连接：LEFT OUTER JOIN ,以左表为主，先查询出左表，按照ON 之后的关联条件匹配右表，没有匹配到的用NULL填充，可以简写成LEFT JOIN
+右外连接：RIGHT OUTER JOIN ,以右表为主，先查询出左表，按照ON 之后的关联条件匹配左表，没有匹配到的用NULL填充，可以简写成RIGHT JOIN
+</code></pre><p>联合查询</p>
+<pre><code>select * from A union select * from B union...
+就是把多个结果集集中在一起，union前的结果为基准，需要注意的是联合查询的列数要相等，相同的记录行会合并，如果使用union all ,不会合并重复的记录行
+</code></pre><p>全连接</p>
+<pre><code>mysql不支持全连接
+可以使用LEFT JOIN和UNION和RIGHT JOIN 联合使用
+select * from A left join B on A.id=B.id union
+select * from A right join B on A.id=B.id
+</code></pre><p>嵌套查询</p>
+<pre><code>用一条SQL语句的结果作为另外一条SQL语句的条件
+select * from A where id IN (SELECT id FROM B)
+</code></pre>
       
     </div>
     
@@ -425,16 +444,25 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
                 src="/images/zuozhu.jpg"
-                alt="火垂るの墓" />
+                alt="小武哥哥" />
             
-              <p class="site-author-name" itemprop="name">火垂るの墓</p>
+              <p class="site-author-name" itemprop="name">小武哥哥</p>
               <p class="site-description motion-element" itemprop="description"><em>一切很好 不缺烦恼</em></p>
           </div>
 
@@ -445,7 +473,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -458,7 +486,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -528,6 +556,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql的关联UPDATE语句"><span class="nav-number">1.</span> <span class="nav-text">mysql的关联UPDATE语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql关联查询语句"><span class="nav-number">2.</span> <span class="nav-text">mysql关联查询语句</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -545,7 +589,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">火垂るの墓</span>
+  <span class="author" itemprop="copyrightHolder">小武哥哥</span>
 
   
 </div>
@@ -733,5 +777,8 @@
 
   
 
-</body>
+
+  undefined
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
 </html>

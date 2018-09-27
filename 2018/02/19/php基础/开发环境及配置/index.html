@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="三种循环： for循环只能遍历索引数组 foreach可以遍历索引和关联数组 联合使用listeach和while循环同样可以遍历索引和关联数组  while,list(),each()组合不会reset()，会在指针所在位置开始进行遍历 foreach遍历会对数组进行reset()操作，会使指针重置   if......elseif.....else 在elseif语句中只能有一个表达式为tru">
+<meta name="description" content="常见php配置 register_globals allow_url_fopen allow_url_include date.timezone display_errors error_reporting&amp;apos;safe_mode upload_max_filesize max_file_uploads post_max_size CGI FastCGI PHP-FPM区别 版本控制软件集中">
 <meta name="keywords" content="-php基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="流程控制">
-<meta property="og:url" content="http://yoursite.com/2018/02/13/php基础/流程控制/index.html">
+<meta property="og:title" content="开发环境及配置">
+<meta property="og:url" content="http://yoursite.com/2018/02/19/php基础/开发环境及配置/index.html">
 <meta property="og:site_name" content="小武哥哥">
-<meta property="og:description" content="三种循环： for循环只能遍历索引数组 foreach可以遍历索引和关联数组 联合使用listeach和while循环同样可以遍历索引和关联数组  while,list(),each()组合不会reset()，会在指针所在位置开始进行遍历 foreach遍历会对数组进行reset()操作，会使指针重置   if......elseif.....else 在elseif语句中只能有一个表达式为tru">
+<meta property="og:description" content="常见php配置 register_globals allow_url_fopen allow_url_include date.timezone display_errors error_reporting&amp;apos;safe_mode upload_max_filesize max_file_uploads post_max_size CGI FastCGI PHP-FPM区别 版本控制软件集中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-13T07:58:57.311Z">
+<meta property="og:updated_time" content="2018-02-19T03:28:50.350Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="流程控制">
-<meta name="twitter:description" content="三种循环： for循环只能遍历索引数组 foreach可以遍历索引和关联数组 联合使用listeach和while循环同样可以遍历索引和关联数组  while,list(),each()组合不会reset()，会在指针所在位置开始进行遍历 foreach遍历会对数组进行reset()操作，会使指针重置   if......elseif.....else 在elseif语句中只能有一个表达式为tru">
+<meta name="twitter:title" content="开发环境及配置">
+<meta name="twitter:description" content="常见php配置 register_globals allow_url_fopen allow_url_include date.timezone display_errors error_reporting&amp;apos;safe_mode upload_max_filesize max_file_uploads post_max_size CGI FastCGI PHP-FPM区别 版本控制软件集中">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/13/php基础/流程控制/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/19/php基础/开发环境及配置/"/>
 
 
 
 
 
-  <title>流程控制 | 小武哥哥</title>
+  <title>开发环境及配置 | 小武哥哥</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/13/php基础/流程控制/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/19/php基础/开发环境及配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小武哥哥">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">流程控制</h1>
+          <h1 class="post-title" itemprop="name headline">开发环境及配置</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-13T15:42:42+08:00">
-                2018-02-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-19T10:59:11+08:00">
+                2018-02-19
               </time>
             
 
@@ -320,26 +320,20 @@
       
 
       
-        <p>三种循环：</p>
-<pre><code>for循环只能遍历索引数组
-foreach可以遍历索引和关联数组
-联合使用listeach和while循环同样可以遍历索引和关联数组
-
-while,list(),each()组合不会reset()，会在指针所在位置开始进行遍历
-foreach遍历会对数组进行reset()操作，会使指针重置
-
-
-if......elseif.....else
-在elseif语句中只能有一个表达式为true;多个elseif从句是排斥关系
-
-switch...case
-switch后面的控制表达式的数据类型只能是整形，浮点类型或者字符串
-continue语句作用到switch的作用类似于break
-跳出switch外的循环，可以使用continue 2
-
-
-switch...case会生成跳转表，直接跳转到case,效率比较高
-</code></pre><p>php中优化多个if…elseif语句：<br>表达式的可能性越大，位置越靠前，根据情况可以使用switch case</p>
+        <p>常见php配置</p>
+<pre><code>register_globals
+allow_url_fopen
+allow_url_include
+date.timezone
+display_errors
+error_reporting&apos;safe_mode
+upload_max_filesize
+max_file_uploads
+post_max_size
+</code></pre><p>CGI FastCGI PHP-FPM区别</p>
+<p>版本控制软件<br>集中式和分布式</p>
+<p>Git的简单操作</p>
+<p>Nginx+PHP-FPM</p>
 
       
     </div>
@@ -370,8 +364,8 @@ switch...case会生成跳转表，直接跳转到case,效率比较高
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/13/php基础/运算符/" rel="next" title="运算符">
-                <i class="fa fa-chevron-left"></i> 运算符
+              <a href="/2018/02/19/php基础/网络协议/" rel="next" title="网络协议">
+                <i class="fa fa-chevron-left"></i> 网络协议
               </a>
             
           </div>
@@ -380,8 +374,8 @@ switch...case会生成跳转表，直接跳转到case,效率比较高
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/13/php基础/自定义函数和内置函数/" rel="prev" title="自定义函数及内部函数">
-                自定义函数及内部函数 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/19/javascript/javascript基础/" rel="prev" title="javascript基础">
+                javascript基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

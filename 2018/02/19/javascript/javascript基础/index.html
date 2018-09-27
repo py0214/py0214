@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="-php基础," />
+  <meta name="keywords" content="-js基础," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="三种循环： for循环只能遍历索引数组 foreach可以遍历索引和关联数组 联合使用listeach和while循环同样可以遍历索引和关联数组  while,list(),each()组合不会reset()，会在指针所在位置开始进行遍历 foreach遍历会对数组进行reset()操作，会使指针重置   if......elseif.....else 在elseif语句中只能有一个表达式为tru">
-<meta name="keywords" content="-php基础">
+<meta name="description" content="javacript基本语法变量的定义变量必须以字母开头 var 声明变量未声明变量的值：undefinedvar a = 1;var a;此时 a 还是1，不会丢失 数据类型：字符串，数字，布尔，数组，对象,NULLjs变量均为对象创建对象new Object()使用对象构造器 函数：无默认值函数内部声明的变量是局部变量函数外声明的变量是全局变量，都能访问+号进行字符拼接 流程控制else if">
+<meta name="keywords" content="-js基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="流程控制">
-<meta property="og:url" content="http://yoursite.com/2018/02/13/php基础/流程控制/index.html">
+<meta property="og:title" content="javascript基础">
+<meta property="og:url" content="http://yoursite.com/2018/02/19/javascript/javascript基础/index.html">
 <meta property="og:site_name" content="小武哥哥">
-<meta property="og:description" content="三种循环： for循环只能遍历索引数组 foreach可以遍历索引和关联数组 联合使用listeach和while循环同样可以遍历索引和关联数组  while,list(),each()组合不会reset()，会在指针所在位置开始进行遍历 foreach遍历会对数组进行reset()操作，会使指针重置   if......elseif.....else 在elseif语句中只能有一个表达式为tru">
+<meta property="og:description" content="javacript基本语法变量的定义变量必须以字母开头 var 声明变量未声明变量的值：undefinedvar a = 1;var a;此时 a 还是1，不会丢失 数据类型：字符串，数字，布尔，数组，对象,NULLjs变量均为对象创建对象new Object()使用对象构造器 函数：无默认值函数内部声明的变量是局部变量函数外声明的变量是全局变量，都能访问+号进行字符拼接 流程控制else if">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-13T07:58:57.311Z">
+<meta property="og:updated_time" content="2018-02-19T03:25:17.115Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="流程控制">
-<meta name="twitter:description" content="三种循环： for循环只能遍历索引数组 foreach可以遍历索引和关联数组 联合使用listeach和while循环同样可以遍历索引和关联数组  while,list(),each()组合不会reset()，会在指针所在位置开始进行遍历 foreach遍历会对数组进行reset()操作，会使指针重置   if......elseif.....else 在elseif语句中只能有一个表达式为tru">
+<meta name="twitter:title" content="javascript基础">
+<meta name="twitter:description" content="javacript基本语法变量的定义变量必须以字母开头 var 声明变量未声明变量的值：undefinedvar a = 1;var a;此时 a 还是1，不会丢失 数据类型：字符串，数字，布尔，数组，对象,NULLjs变量均为对象创建对象new Object()使用对象构造器 函数：无默认值函数内部声明的变量是局部变量函数外声明的变量是全局变量，都能访问+号进行字符拼接 流程控制else if">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/13/php基础/流程控制/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/19/javascript/javascript基础/"/>
 
 
 
 
 
-  <title>流程控制 | 小武哥哥</title>
+  <title>javascript基础 | 小武哥哥</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/13/php基础/流程控制/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/19/javascript/javascript基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小武哥哥">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">流程控制</h1>
+          <h1 class="post-title" itemprop="name headline">javascript基础</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-13T15:42:42+08:00">
-                2018-02-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-19T11:09:14+08:00">
+                2018-02-19
               </time>
             
 
@@ -320,26 +320,24 @@
       
 
       
-        <p>三种循环：</p>
-<pre><code>for循环只能遍历索引数组
-foreach可以遍历索引和关联数组
-联合使用listeach和while循环同样可以遍历索引和关联数组
-
-while,list(),each()组合不会reset()，会在指针所在位置开始进行遍历
-foreach遍历会对数组进行reset()操作，会使指针重置
-
-
-if......elseif.....else
-在elseif语句中只能有一个表达式为true;多个elseif从句是排斥关系
-
-switch...case
-switch后面的控制表达式的数据类型只能是整形，浮点类型或者字符串
-continue语句作用到switch的作用类似于break
-跳出switch外的循环，可以使用continue 2
-
-
-switch...case会生成跳转表，直接跳转到case,效率比较高
-</code></pre><p>php中优化多个if…elseif语句：<br>表达式的可能性越大，位置越靠前，根据情况可以使用switch case</p>
+        <h2 id="javacript基本语法"><a href="#javacript基本语法" class="headerlink" title="javacript基本语法"></a>javacript基本语法</h2><p>变量的定义<br>变量必须以字母开头</p>
+<p>var 声明变量<br>未声明变量的值：undefined<br>var a = 1;<br>var a;<br>此时 a 还是1，不会丢失</p>
+<p>数据类型：<br>字符串，数字，布尔，数组，对象,NULL<br>js变量均为对象<br>创建对象<br>new Object()<br>使用对象构造器</p>
+<p>函数：<br>无默认值<br>函数内部声明的变量是局部变量<br>函数外声明的变量是全局变量，都能访问<br>+号进行字符拼接</p>
+<p>流程控制<br>else if</p>
+<p>Number<br>var pi = 3.14;<br>var myNum = new Number(value);</p>
+<p>String<br>‘’和“”没有区别</p>
+<p>Array<br>var arr = new Array();<br>var arr = new Array(size);<br>var arr = new Array(err,err2,err3);</p>
+<p>Date<br>var date = new Date();<br>方法和属性</p>
+<p>Math<br>var pi_value = Math.PI;</p>
+<p>RegExp正则表达式<br>/pattern/attributes<br>new RegExp(pattern,attributes);</p>
+<p>window对象<br>window history location</p>
+<p>DOM对象<br>document ,Element,Attr Event</p>
+<p>jQuery基础知识</p>
+<p>jQuery选择器：<br>基本选择器，层次选择器，过滤选择器，可见性过滤选择器<br>属性选择器，子元素过滤选择器，表单对象属性过滤选择器</p>
+<p>jQuery事件</p>
+<p>jQuery效果</p>
+<p>jQuery DOM操作</p>
 
       
     </div>
@@ -357,7 +355,7 @@ switch...case会生成跳转表，直接跳转到case,效率比较高
       
         <div class="post-tags">
           
-            <a href="/tags/php基础/" rel="tag"># -php基础</a>
+            <a href="/tags/js基础/" rel="tag"># -js基础</a>
           
         </div>
       
@@ -370,8 +368,8 @@ switch...case会生成跳转表，直接跳转到case,效率比较高
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/13/php基础/运算符/" rel="next" title="运算符">
-                <i class="fa fa-chevron-left"></i> 运算符
+              <a href="/2018/02/19/php基础/开发环境及配置/" rel="next" title="开发环境及配置">
+                <i class="fa fa-chevron-left"></i> 开发环境及配置
               </a>
             
           </div>
@@ -379,10 +377,6 @@ switch...case会生成跳转表，直接跳转到case,效率比较高
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/13/php基础/自定义函数和内置函数/" rel="prev" title="自定义函数及内部函数">
-                自定义函数及内部函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -434,8 +428,17 @@ switch...case会生成跳转表，直接跳转到case,效率比较高
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -536,6 +539,22 @@ switch...case会生成跳转表，直接跳转到case,效率比较高
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#javacript基本语法"><span class="nav-number">1.</span> <span class="nav-text">javacript基本语法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

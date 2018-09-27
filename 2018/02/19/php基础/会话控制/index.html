@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="为了保持用户的状态 通过GET参数传递//不建议使用 Cookie:存储在浏览器中，包含客户端登录信息Cookie操作setcookie($name,$value,$expire,$path,$domain,$secure); setcookie($name,’’,time()-1000);//cookie的删除 cookie不会浪费服务器资源，但是用户可以禁止cookie session存储在服">
+<meta name="description" content="为了保持用户的状态 通过GET参数传递//不建议使用 Cookie: 存储在浏览器中，包含客户端登录信息 Cookie操作 setcookie($name,$value,$expire,$path,$domain,$secure);  setcookie($name,&amp;apos;&amp;apos;,time()-1000);//cookie的删除  cookie不会浪费服务器资源，但是用户可以禁止coo">
 <meta name="keywords" content="-php基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="会话控制">
 <meta property="og:url" content="http://yoursite.com/2018/02/19/php基础/会话控制/index.html">
-<meta property="og:site_name" content="火垂るの墓">
-<meta property="og:description" content="为了保持用户的状态 通过GET参数传递//不建议使用 Cookie:存储在浏览器中，包含客户端登录信息Cookie操作setcookie($name,$value,$expire,$path,$domain,$secure); setcookie($name,’’,time()-1000);//cookie的删除 cookie不会浪费服务器资源，但是用户可以禁止cookie session存储在服">
+<meta property="og:site_name" content="小武哥哥">
+<meta property="og:description" content="为了保持用户的状态 通过GET参数传递//不建议使用 Cookie: 存储在浏览器中，包含客户端登录信息 Cookie操作 setcookie($name,$value,$expire,$path,$domain,$secure);  setcookie($name,&amp;apos;&amp;apos;,time()-1000);//cookie的删除  cookie不会浪费服务器资源，但是用户可以禁止coo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-19T01:52:53.263Z">
+<meta property="og:updated_time" content="2018-02-19T03:29:31.515Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="会话控制">
-<meta name="twitter:description" content="为了保持用户的状态 通过GET参数传递//不建议使用 Cookie:存储在浏览器中，包含客户端登录信息Cookie操作setcookie($name,$value,$expire,$path,$domain,$secure); setcookie($name,’’,time()-1000);//cookie的删除 cookie不会浪费服务器资源，但是用户可以禁止cookie session存储在服">
+<meta name="twitter:description" content="为了保持用户的状态 通过GET参数传递//不建议使用 Cookie: 存储在浏览器中，包含客户端登录信息 Cookie操作 setcookie($name,$value,$expire,$path,$domain,$secure);  setcookie($name,&amp;apos;&amp;apos;,time()-1000);//cookie的删除  cookie不会浪费服务器资源，但是用户可以禁止coo">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>会话控制 | 火垂るの墓</title>
+  <title>会话控制 | 小武哥哥</title>
   
 
 
@@ -156,12 +156,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">火垂るの墓</span>
+        <span class="site-title">小武哥哥</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">化作一颗流星不管飞向那里，我身後有闪烁的回忆</p>
+        <p class="site-subtitle">什么也没错过<br />其实一无所获</p>
       
   </div>
 
@@ -256,13 +256,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/19/php基础/会话控制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="火垂るの墓">
+      <meta itemprop="name" content="小武哥哥">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/zuozhu.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="火垂るの墓">
+      <meta itemprop="name" content="小武哥哥">
     </span>
 
     
@@ -322,13 +322,33 @@
       
         <p>为了保持用户的状态</p>
 <p>通过GET参数传递//不建议使用</p>
-<p>Cookie:存储在浏览器中，包含客户端登录信息<br>Cookie操作<br>setcookie($name,$value,$expire,$path,$domain,$secure);</p>
-<p>setcookie($name,’’,time()-1000);//cookie的删除</p>
-<p>cookie不会浪费服务器资源，但是用户可以禁止cookie</p>
-<p>session<br>存储在服务器，基于cookie,存储在cookie中，如果cookie被禁用，通过浏览器传参<br>信息安全，存储在服务器，占用服务器资源</p>
-<p>session_start();<br>$_SESSION;<br>$_SESSION = [];//清空<br>session_destroy();//销毁</p>
-<p>session配置<br>    session.auto_start<br>    session.cookie_domain<br>    session.cookie_lifetime<br>    session.cookie_path<br>    session.name<br>    session.save_path<br>    session.use_cookies<br>    session.use_trans_sid</p>
-<pre><code>//session垃圾回收机制***
+<p>Cookie:</p>
+<pre><code>存储在浏览器中，包含客户端登录信息
+Cookie操作
+setcookie($name,$value,$expire,$path,$domain,$secure);
+
+setcookie($name,&apos;&apos;,time()-1000);//cookie的删除
+
+cookie不会浪费服务器资源，但是用户可以禁止cookie
+</code></pre><p>session </p>
+<pre><code>存储在服务器，基于cookie,存储在cookie中，如果cookie被禁用，通过浏览器传参
+信息安全，存储在服务器，占用服务器资源
+
+session_start();
+$_SESSION;
+$_SESSION = [];//清空
+session_destroy();//销毁
+</code></pre><p>session配置</p>
+<pre><code>session.auto_start
+session.cookie_domain
+session.cookie_lifetime
+session.cookie_path
+session.name
+session.save_path
+session.use_cookies
+session.use_trans_sid
+
+//session垃圾回收机制***
 session.gc_probability
 session.gc_divisor
 session.gc_maxlifetime
@@ -443,9 +463,9 @@ session_name()和session_
             
               <img class="site-author-image" itemprop="image"
                 src="/images/zuozhu.jpg"
-                alt="火垂るの墓" />
+                alt="小武哥哥" />
             
-              <p class="site-author-name" itemprop="name">火垂るの墓</p>
+              <p class="site-author-name" itemprop="name">小武哥哥</p>
               <p class="site-description motion-element" itemprop="description"><em>一切很好 不缺烦恼</em></p>
           </div>
 
@@ -456,7 +476,7 @@ session_name()和session_
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -469,7 +489,7 @@ session_name()和session_
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -556,7 +576,7 @@ session_name()和session_
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">火垂るの墓</span>
+  <span class="author" itemprop="copyrightHolder">小武哥哥</span>
 
   
 </div>
@@ -744,5 +764,8 @@ session_name()和session_
 
   
 
-</body>
+
+  undefined
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
 </html>
